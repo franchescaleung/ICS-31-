@@ -1,0 +1,347 @@
+Python 3.6.4 (v3.6.4:d48ecebad5, Dec 18 2017, 21:07:28) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+How many hours?
+4
+This many hours: 4.0
+How many dollars per hour?
+2
+This many dollars per hour:   2.0
+Weekly salary:   8.0
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+How many hours?2
+This many hours: 2
+How many dollars per hour?3
+This many dollars per hour:   3.0
+Weekly salary:   6.0
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+How many hours?2
+This many hours: 2
+How many dollars per hour?3
+This many dollars per hour:  3.0
+Weekly salary: $  6.0
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+How many hours?2
+This many hours: 2
+How many dollars per hour?3
+This many dollars per hour: $ 3.0
+Weekly salary: $  6.0
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+How many hours?
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Hello. What is your name?
+Rita
+Hello, Rita
+It's nice to meet you.
+How old are you?
+18
+Next year you will be 19.0  years old
+Good-bye!
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Hello. What is your name?
+Amy
+Hello, Amy
+It's nice to meet you.
+How old are you?
+19
+Next year you will be 20 years old
+Good-bye!
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Hello. What is your name?
+
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Business name:ty
+Number of euros:
+4
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Business name:ty
+Number of euros:8
+Number of pounds:9
+Number of dollars:0
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Please provide this information:
+Business name:ty
+Number of euros:100
+Number of pounds:0
+Number of dollars:0
+Copenhagen Chamber of Commerce
+Business name: ty
+100 euros is 746.0 krone
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Please provide this information:
+Business name:ty
+Number of euros:100
+Number of pounds:200
+Number of dollars:1000
+Copenhagen Chamber of Commerce
+Business name: ty
+100 euros is 746.0 krone
+200 pounds is 1720.0 krone
+1000 dollars is 6620.0 krone
+Total krone: 9086.0
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Please provide this information:
+Business name:
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Return of Sherlock Holmes
+23.5
+True
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Return of Sherlock Holmes
+23.5
+True
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Return of Sherlock Holmes
+23.5
+23.333333333333332
+True
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Return of Sherlock Holmes
+23.5
+23.333333333333332
+True
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Return of Sherlock Holmes
+23.5
+23.333333333333332
+True
+Traceback (most recent call last):
+  File "/Users/franchesca/Desktop/lab2.py", line 75, in <module>
+    still_another[3]=26.00
+TypeError: 'Book' object does not support item assignment
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Return of Sherlock Holmes
+23.5
+23.333333333333332
+True
+Traceback (most recent call last):
+  File "/Users/franchesca/Desktop/lab2.py", line 75, in <module>
+    still_another[3]= '26.00'
+TypeError: 'Book' object does not support item assignment
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Return of Sherlock Holmes
+23.5
+23.333333333333332
+True
+26
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Return of Sherlock Holmes
+23.5
+23.333333333333332
+True
+Traceback (most recent call last):
+  File "/Users/franchesca/Desktop/lab2.py", line 75, in <module>
+    still_another=(float(still_another._replace(price=26)))
+TypeError: float() argument must be a string or a number, not 'Book'
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Return of Sherlock Holmes
+23.5
+23.333333333333332
+True
+$ 26
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Return of Sherlock Holmes
+23.5
+23.333333333333332
+True
+$ 26 .00
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Return of Sherlock Holmes
+23.5
+23.333333333333332
+True
+$ 26 .00
+Traceback (most recent call last):
+  File "/Users/franchesca/Desktop/lab2.py", line 79, in <module>
+    still_another = still_another._replace(price = (price *1.2))
+NameError: name 'price' is not defined
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Return of Sherlock Holmes
+23.5
+23.333333333333332
+True
+$ 26 .00
+$ 31.2
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Return of Sherlock Holmes
+23.5
+23.333333333333332
+True
+$ 26 .00
+$ 31.2
+Traceback (most recent call last):
+  File "/Users/franchesca/Desktop/lab2.py", line 84, in <module>
+    Animal = namedtuple('name', 'species', 'age', 'weight in kg', 'favorite food')
+TypeError: namedtuple() takes 2 positional arguments but 5 were given
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Traceback (most recent call last):
+  File "/Users/franchesca/Desktop/lab2.py", line 84, in <module>
+    Animal = namedtuple('name', 'species', 'age', 'weight in kg', 'favorite food')
+TypeError: namedtuple() takes 2 positional arguments but 5 were given
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+False
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+False
+elephant
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+True
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+True
+Adventures of Sherlock Holmes
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+True
+False
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Nonna
+True
+10.5
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Nonna
+True
+10.5
+Traceback (most recent call last):
+  File "/Users/franchesca/Desktop/lab2.py", line 119, in <module>
+    print(RC[0].sort)
+AttributeError: 'Restaurant' object has no attribute 'sort'
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Nonna
+True
+10.5
+<built-in method sort of list object at 0x105fef588>
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Nonna
+True
+10.5
+None
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Nonna
+True
+10.5
+['Nobu', 'Nonna', 'Thai Dishes']
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Nonna
+True
+10.5
+['Addis Ababa', 'Jitlada', 'Nobu', 'Nola', 'Noma', 'Nonna', 'Thai Dishes']
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Nonna
+True
+10.5
+['Addis Ababa', 'Jitlada', 'Nobu', 'Nola', 'Noma', 'Nonna', 'Thai Dishes']
+i
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Nonna
+True
+10.5
+[Restaurant(name='Thai Dishes', cuisine='Thai', phone='334-4433', dish='Mee Krob', price=12.5), Restaurant(name='Nobu', cuisine='Japanese', phone='335-4433', dish='Natto Temaki', price=5.5), Restaurant(name='Nonna', cuisine='Italian', phone='355-4433', dish='Stracotto', price=25.5), Restaurant(name='Jitlada', cuisine='Thai', phone='324-4433', dish='Paht Woon Sen', price=15.5), Restaurant(name='Nola', cuisine='New Orleans', phone='336-4433', dish='Jambalaya', price=5.5), Restaurant(name='Noma', cuisine='Modern Danish', phone='337-4433', dish='Birch Sap', price=35.5), Restaurant(name='Addis Ababa', cuisine='Ethiopian', phone='337-4453', dish='Yesiga Tibs', price=10.5)]
+Yesiga Tibs
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Nonna
+True
+10.5
+Traceback (most recent call last):
+  File "/Users/franchesca/Desktop/lab2.py", line 120, in <module>
+    print(RC.name)
+AttributeError: 'list' object has no attribute 'name'
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Nonna
+True
+10.5
+Traceback (most recent call last):
+  File "/Users/franchesca/Desktop/lab2.py", line 120, in <module>
+    print(RC.name)
+AttributeError: 'list' object has no attribute 'name'
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Nonna
+True
+10.5
+[Restaurant(name='Addis Ababa', cuisine='Ethiopian', phone='337-4453', dish='Yesiga Tibs', price=10.5), Restaurant(name='Jitlada', cuisine='Thai', phone='324-4433', dish='Paht Woon Sen', price=15.5), Restaurant(name='Nobu', cuisine='Japanese', phone='335-4433', dish='Natto Temaki', price=5.5), Restaurant(name='Nola', cuisine='New Orleans', phone='336-4433', dish='Jambalaya', price=5.5), Restaurant(name='Noma', cuisine='Modern Danish', phone='337-4433', dish='Birch Sap', price=35.5), Restaurant(name='Nonna', cuisine='Italian', phone='355-4433', dish='Stracotto', price=25.5), Restaurant(name='Thai Dishes', cuisine='Thai', phone='334-4433', dish='Mee Krob', price=12.5)]
+Mee Krob
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+Nonna
+True
+10.5
+[Restaurant(name='Addis Ababa', cuisine='Ethiopian', phone='337-4453', dish='Yesiga Tibs', price=10.5), Restaurant(name='Jitlada', cuisine='Thai', phone='324-4433', dish='Paht Woon Sen', price=15.5), Restaurant(name='Nobu', cuisine='Japanese', phone='335-4433', dish='Natto Temaki', price=5.5), Restaurant(name='Nola', cuisine='New Orleans', phone='336-4433', dish='Jambalaya', price=5.5), Restaurant(name='Noma', cuisine='Modern Danish', phone='337-4433', dish='Birch Sap', price=35.5), Restaurant(name='Nonna', cuisine='Italian', phone='355-4433', dish='Stracotto', price=25.5), Restaurant(name='Thai Dishes', cuisine='Thai', phone='334-4433', dish='Mee Krob', price=12.5)]
+Mee Krob
+Traceback (most recent call last):
+  File "/Users/franchesca/Desktop/lab2.py", line 127, in <module>
+    new_list.sort()
+AttributeError: 'tuple' object has no attribute 'sort'
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+('Addis Ababa', 'Ethiopian', '337-4453', 'Yesiga Tibs', 10.5, 'Jitlada', 'Thai', '324-4433', 'Paht Woon Sen', 15.5, 'Thai Dishes', 'Thai', '334-4433', 'Mee Krob', 12.5, 'Nonna', 'Italian', '355-4433', 'Stracotto', 25.5)
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+[Restaurant(name='Nobu', cuisine='Japanese', phone='335-4433', dish='Natto Temaki', price=5.5), Restaurant(name='Nola', cuisine='New Orleans', phone='336-4433', dish='Jambalaya', price=5.5), Restaurant(name='Addis Ababa', cuisine='Ethiopian', phone='337-4453', dish='Yesiga Tibs', price=10.5), Restaurant(name='Thai Dishes', cuisine='Thai', phone='334-4433', dish='Mee Krob', price=12.5), Restaurant(name='Jitlada', cuisine='Thai', phone='324-4433', dish='Paht Woon Sen', price=15.5), Restaurant(name='Nonna', cuisine='Italian', phone='355-4433', dish='Stracotto', price=25.5), Restaurant(name='Noma', cuisine='Modern Danish', phone='337-4433', dish='Birch Sap', price=35.5)]
+('Addis Ababa', 'Ethiopian', '337-4453', 'Yesiga Tibs', 10.5, 'Jitlada', 'Thai', '324-4433', 'Paht Woon Sen', 15.5, 'Thai Dishes', 'Thai', '334-4433', 'Mee Krob', 12.5, 'Nonna', 'Italian', '355-4433', 'Stracotto', 25.5)
+>>> a = [1,2]
+>>> b = [3,4]
+>>> a.extend(b)
+>>> a
+[1, 2, 3, 4]
+>>> b
+[3, 4]
+>>> a[:2]
+[1, 2]
+>>> a[0:2]
+[1, 2]
+>>> a[-2:]
+[3, 4]
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+[Restaurant(name='Addis Ababa', cuisine='Ethiopian', phone='337-4453', dish='Yesiga Tibs', price=10.5), Restaurant(name='Jitlada', cuisine='Thai', phone='324-4433', dish='Paht Woon Sen', price=15.5), Restaurant(name='Nobu', cuisine='Japanese', phone='335-4433', dish='Natto Temaki', price=5.5), Restaurant(name='Nola', cuisine='New Orleans', phone='336-4433', dish='Jambalaya', price=5.5), Restaurant(name='Noma', cuisine='Modern Danish', phone='337-4433', dish='Birch Sap', price=35.5), Restaurant(name='Nonna', cuisine='Italian', phone='355-4433', dish='Stracotto', price=25.5), Restaurant(name='Thai Dishes', cuisine='Thai', phone='334-4433', dish='Mee Krob', price=12.5)]
+None
+Traceback (most recent call last):
+  File "/Users/franchesca/Desktop/lab2.py", line 134, in <module>
+    p
+NameError: name 'p' is not defined
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+[Restaurant(name='Addis Ababa', cuisine='Ethiopian', phone='337-4453', dish='Yesiga Tibs', price=10.5), Restaurant(name='Jitlada', cuisine='Thai', phone='324-4433', dish='Paht Woon Sen', price=15.5), Restaurant(name='Nobu', cuisine='Japanese', phone='335-4433', dish='Natto Temaki', price=5.5), Restaurant(name='Nola', cuisine='New Orleans', phone='336-4433', dish='Jambalaya', price=5.5), Restaurant(name='Noma', cuisine='Modern Danish', phone='337-4433', dish='Birch Sap', price=35.5), Restaurant(name='Nonna', cuisine='Italian', phone='355-4433', dish='Stracotto', price=25.5), Restaurant(name='Thai Dishes', cuisine='Thai', phone='334-4433', dish='Mee Krob', price=12.5)]
+None
+>>> 
+================= RESTART: /Users/franchesca/Desktop/lab2.py =================
+None
+>>> 
