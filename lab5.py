@@ -102,13 +102,131 @@ print()
 print("c8")
 def dishlist_change_price(a: "list of dishes", b: float) -> "list of dishes":
     ''' takes dishes and percentage change and returns a list of dishes with price change'''
-    for i in a:
-        if b > 100:
-            a = a._replace(price = i.price * (b/100))
-        if b < 100:
-            a = a._replace(price = i.price * (1 + (b/100)))
-        if b == 100:
-            a = a._replace(price = i.price * 1)
-
-print(dishlist_change_price(dish_list_1, 120))
+    for i in range(len(a)):
+            a[i] = a[i]._replace(price = a[i].price * (1 + (b/100)))
+    
+dishlist_change_price(dish_list_1, 120)
+print(dish_list_1)
         
+#c9
+print()
+print("c9")
+def dishlist_prices(a: "list of dishes") -> "list of prices":
+    '''takes list of dish and returns list of prices'''
+    prices=[]
+    for i in a:
+        prices.append(i.price)
+    return prices
+print(dishlist_prices(dish_list_2))
+
+
+#c10
+print()
+print("c10")
+def dishlist_average(a: "list of dishes") -> float:
+    '''takes list of dishes and returns average price of all'''
+    total = 0
+    for i in a:
+        total += i.price
+    average = total / (len(a))
+    return average
+
+dish10 = Dish('Pizza', 10.00, 500)
+dish11 = Dish('Fries', 3.00, 300)
+dishlist3 = [dish10, dish11]
+print(dishlist_average(dishlist3))
+
+#c11
+print("c11")
+def dishlist_keep_cheap(a: "list of dishes", b: float) -> "list of dishes":
+    newlist = []
+    for i in a:
+        if i.price < b:
+            newlist.append(i)
+    return newlist
+print(dishlist_keep_cheap(dishlist3, 5))
+
+#c12
+print("c12")
+dish12 = Dish('Shrimp', 22, 312)
+dish13 = Dish('Fried Rice', 36.55, 415)
+dish14 = Dish('Mac n Cheese', 24.98, 222)
+dish15 = Dish('Lasagna', 43, 498)
+dish16 = Dish('Pizza', 34.95, 333)
+dish17 = Dish('Chicken Wings', 24, 988)
+dish18 = Dish('Salmon', 33.33, 789)
+dish19 = Dish('Eggs', 10.99, 99)
+dish20 = Dish('Omlette', 100, 666)
+dish21 = Dish('Chicken Tenders', 65.50, 345)
+dish22 = Dish('Dumplings', 23.99, 534)
+dish23 = Dish('Clams', 78.99, 690)
+dish24 = Dish('Cake', 50, 564)
+dish25 = Dish('Cheesecake', 33.45, 980)
+biglist = [dish1, dish2, dish3, dish4, dish5, dish6, dish7, dish8, dish9, dish10, dish11, dish12, dish13, dish14, dish15, dish16, dish17, dish18, dish19, dish20, dish21, dish22, dish23, dish24, dish25] 
+def before_and_after():
+    percentage_change = int(input("How big is the percentage change?"))
+    print(dishlist_display(biglist))
+    dishlist_change_price(biglist, percentage_change)
+    print(dishlist_display(biglist))
+
+before_and_after()    
+
+#part e
+print()
+print("---Part E---")
+print()
+#e1
+print("e1")
+Restaurant = namedtuple('Restaurant', 'name cuisine phone menu')
+r1 = Restaurant('Thai Dishes', 'Thai', '334-4433', [Dish('Mee Krob', 12.50, 500),
+                                                    Dish('Larb Gai', 11.00, 450)])
+r2 = Restaurant('Taillevent', 'French', '01-44-95-15-01', 
+				[Dish('Homard Bleu', 45.00, 750),
+				 Dish('Tournedos Rossini', 65.00, 950),
+				 Dish("Selle d'Agneau", 60.00, 850)])
+r3 = Restaurant('Pascal', 'French', '940-752-0107', [Dish('Escargots', 12.95, 250),
+                                                     Dish('Poached salmon', 18.50, 550),
+                                                     Dish('Rack of lamb', 24.00, 850),
+                                                     Dish('Marjolaine Cake', 8.50, 950)])
+r4 = Restaurant('Pascal', 'French', '940-752-0107', [])
+
+#e2
+print("e2")
+print()
+def restaurant_first_dish_name(a: Restaurant) -> str:
+    '''returns name of first dish in restauarant'''
+    name = ""
+    if a.menu == []:
+        return name
+    else:
+        return a.menu[0].name
+assert(restaurant_first_dish_name(r3)) == 'Escargots'
+assert(restaurant_first_dish_name(r4)) == ""
+print(restaurant_first_dish_name(r2))
+
+#e3
+print()
+print("e3")
+def restaurant_is_cheap(a: Restaurant, n: float) -> bool:
+    '''returns true if the average price is less than or equal to number'''
+    total = 0
+    for i in a.menu:
+            total += i.price
+    average = total / (len(a.menu))
+    if average <= n:
+        return True
+    else:
+        return False
+assert(restaurant_is_cheap(r1, 10)) == False 
+print(restaurant_is_cheap(r1, 20))
+
+#e4
+print()
+print("e4")
+print()
+
+list_of_restaurants = [r1, r2, r3, r4]
+def collection_raise_prices(a: "collection") -> "list of restaurants":
+    for i in range(len(a)):
+        a[i] = a[i]._replace([i].menu.price = a[i][3].price + 2.50)
+print(collection_raise_prices(list_of_restaurants))
