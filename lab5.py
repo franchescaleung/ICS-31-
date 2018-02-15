@@ -70,10 +70,11 @@ dish7 = Dish('Salad', 23.25, 100)
 dish8 = Dish('Donuts', 18.90, 400)
 dish9 = Dish('Steak', 22.50, 800)
 dish_list_1 = [dish1, dish2, dish3, dish4, dish5]
-print(len(dish_list_1))
+print("length of dish list", len(dish_list_1))
+print()
 dish_list_2 = [dish6, dish7, dish8, dish9]
 dish_list_1.extend(dish_list_2)
-print(dish_list_1)
+print("List of dish list 1", dish_list_1)
 
 print()
 def dishlist_display(a: "list of dishes") -> str:
@@ -165,9 +166,9 @@ dish25 = Dish('Cheesecake', 33.45, 980)
 biglist = [dish1, dish2, dish3, dish4, dish5, dish6, dish7, dish8, dish9, dish10, dish11, dish12, dish13, dish14, dish15, dish16, dish17, dish18, dish19, dish20, dish21, dish22, dish23, dish24, dish25] 
 def before_and_after():
     percentage_change = int(input("How big is the percentage change?"))
-    print(dishlist_display(biglist))
+    print("Original prices:", dishlist_display(biglist))
     dishlist_change_price(biglist, percentage_change)
-    print(dishlist_display(biglist))
+    print("New prices:", dishlist_display(biglist))
 
 before_and_after()    
 
@@ -189,6 +190,7 @@ r3 = Restaurant('Pascal', 'French', '940-752-0107', [Dish('Escargots', 12.95, 25
                                                      Dish('Rack of lamb', 24.00, 850),
                                                      Dish('Marjolaine Cake', 8.50, 950)])
 r4 = Restaurant('Pascal', 'French', '940-752-0107', [])
+list_of_restaurants = [r1, r2, r3]
 
 #e2
 print("e2")
@@ -207,6 +209,7 @@ print(restaurant_first_dish_name(r2))
 #e3
 print()
 print("e3")
+print()
 def restaurant_is_cheap(a: Restaurant, n: float) -> bool:
     '''returns true if the average price is less than or equal to number'''
     total = 0
@@ -225,8 +228,93 @@ print()
 print("e4")
 print()
 
-list_of_restaurants = [r1, r2, r3, r4]
-def collection_raise_prices(a: "collection") -> "list of restaurants":
-    for i in range(len(a)):
-        a[i] = a[i]._replace([i].menu.price = a[i][3].price + 2.50)
+
+def dish_raise_price(d:Dish, x: float) -> float:
+    '''adds 2.50 to price of dish'''
+    d = d._replace(price = d.price + x)
+    return d
+
+
+def menu_raise_prices(m: "list of dish", x: float) -> "menu":
+    '''returns new menu prices with x amount changed'''
+    new_dish_list = []
+    for i in m:
+        s = dish_raise_price(i, x)
+        new_dish_list.append(s)
+    return new_dish_list
+
+def restaurant_raise_prices(r: Restaurant) -> float:
+    newrestaurant = r._replace(menu = menu_raise_prices(r.menu, 2.50))
+    return newrestaurant
+
+
+def collection_raise_prices(a: "list of restaurants") -> "list of restaurants":
+    new_collection = []
+    for i in a:
+        b = restaurant_raise_prices(i)
+        new_collection.append(b)
+    return new_collection
+
 print(collection_raise_prices(list_of_restaurants))
+print()
+
+def collection_change_price(a: "list of restaurants", b: float) -> "list of restaurants":
+    newcollection = []
+    for i in a:
+        newmenu = []
+        for j in i.menu:
+            if b < 0:
+                j = j._replace(price = (-1*(b/100)) * j.price)
+                newmenu.append(j)
+            if b > 0:
+                j = j._replace(price = (1 + (b/100)) * j.price)
+                newmenu.append(j)
+        
+        i = i._replace(menu = newmenu)
+        newcollection.append(i)
+    return newcollection
+print(collection_change_price(list_of_restaurants, 100))
+   
+#e5
+print()
+print("e5")
+print()
+def collection_select_cheap(a: "collection",n: float) -> "list of restaurants":
+    ''' returns a list of restaurants with avergae price less than n'''
+    cheap = []
+    for i in a:
+        if restaurant_is_cheap(i, n) == True:
+            cheap.append(i)
+    return cheap
+
+print(collection_select_cheap(list_of_restaurants, 15))
+
+
+#part g
+print()
+print("---Part G---")
+print()
+Count = namedtuple("Count", "letter number")
+def for_one(a: str, b: str) -> int:
+    x = 0
+    for i in a:
+        if i == b:
+            x +=1
+    count = Count(b, x)
+    return count
+print(for_one("some", "o"))
+
+def letter_count(a: str, b: str) -> int:
+    '''returns letter count'''
+    newlist = []
+    for j in b:
+        s = for_one(a,j)
+        newlist.append(s)
+    return newlist
+
+assert(letter_count('The cabbage has baggage', 'abcd')) == [Count(letter='a',number=5), Count(letter='b',number=3), Count(letter='c',number=1), Count(letter='d',number=0)]
+print(letter_count('sooome', 'oe'))
+
+
+
+
