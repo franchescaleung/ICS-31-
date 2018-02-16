@@ -31,24 +31,19 @@ def sentence_stats(a: str):
     average = 0
     table = str.maketrans(".,?!@#$%^&*():", "              ")
     a = a.translate(table)
-    print(a)
     l = a.split()
     total = 0 
     for word in l:
         total += len(word)
-    print(total)
-    print("l:",l)
     words = len(l)
-    print(words)
     for i in a:
         if i == " ":
             space +=1
     characters = len(a)
     average = total/words
-    print(characters)
-    print(space)
     print("Characters: " + str(characters) + "\n" + "Words: " + str(words) + "\n" + "Average word length: " + str(average))
 
+sentence_stats('I love UCI')
 #c3
 print()
 print("c3")
@@ -72,11 +67,11 @@ print()
 print("d1")
 print()
 from random import randrange
-##for i in range(50):
-##    print (randrange(11))
-##print()
-##for i in range(50):
-##    print(randrange(1, 7))
+for i in range(50):
+    print (randrange(11))
+print()
+for i in range(50):
+    print(randrange(1, 7))
 
 #d2
 print()
@@ -86,8 +81,8 @@ def roll2dice() -> int:
     '''returns a number of two random dice roll'''
     x = (randrange(1, 7)) + (randrange(1, 7))
     return x
-##for i in range(50):
-##    print (roll2dice())
+for i in range(50):
+    print (roll2dice())
 
 #d3
 print()
@@ -113,31 +108,35 @@ print("---Part E---")
 print()
 #e1
 print("e1")
-ALPHABET = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+a = "abcdefghijklmnopqrstuvwxyz"
+def rotate(key: int):
+    '''return new alphabet'''
+    rotate  = ""
+    for letter in a:
+        if letter in a:
+            rotate += a[(a.index(letter) + key) % len(a)]
+    return rotate
 def shift_encrypt(message: str, key: int):
     '''return the ciphertext'''
-    #why is it only d
-    encrypt = []
-    for letter in message:
-        if letter.split() and letter in ALPHABET:
-            encrypt.append(ALPHABET[(letter.index(letter)+ key) % 52])
-            print(ALPHABET[letter.index(letter) + key])
-        else:
-            encrypt.append(i)
-    print(encrypt)
-    final = ''.join(encrypt)
-    return final
+    t = str.maketrans(a, rotate(key))
+    return message.translate(t)
         
 print(shift_encrypt("abc", 3))
 def shift_decrypt(message: str, key: int):
     '''turns code into normal text'''
     #never tried
+    key = 26 - key
+    return shift_encrypt(message, key)
+    
+
+print(shift_decrypt("def", 3))
 
 #e2
 print()
 print("e2")
 print()
 secretmessage= "ifmmp xpsme"
+print(shift_decrypt(secretmessage, 1))
 #hello world
 
 
@@ -149,6 +148,12 @@ a = [ "Four score and seven years ago, our fathers brought forth on",
   "to the proposition that all men are created equal.  Now we are",
   "   engaged in a great 		civil war, testing whether that nation, or any",
   "nation so conceived and so dedicated, can long endure.        " ]
+b = '''
+"Four score and seven years ago, our fathers brought forth on",
+  "this continent a new nation, conceived in liberty and dedicated",
+  "to the proposition that all men are created equal.  Now we are",
+  "   engaged in a great 		civil war, testing whether that nation, or any",
+  "nation so conceived and so dedicated, can long endure." '''
 print()
 print("part f")
 print()
@@ -169,43 +174,45 @@ print("f2")
 print()
 def stats(l: "list of strings"):
     '''takes list of strings and prints stats'''
-    #how to not repeat lines
-    lines = 16824
-    emptylines = 483
-    avgcharperline = 53.7
-    avgcharpernonemptyline = 65.9
-    li = [lines, emptylines, avgcharperline, avgcharpernonemptyline]
-    s = ["lines in the list", "empty lines", "average characters per line", "average characters per non-empty line"]
-    for i in li:
-        for j in s:
-            print('{:7.1f} {:1}'.format(i, j))
-stats(["hu", "ki"])
+    emptylines = 0
+    charperline = 0
+    avgcharperline = 0
+    lines = 0
+    for i in l:
+        if i == "\n":
+            emptylines +=1
+    for string in l:
+        charperline += len(string)
+        avgcharperline = charperline/len(l)
+    for i in l:
+        if i != "\n":
+            lines +=1
+            avgcharpernonemptyline = charperline/lines
+    print('{:5}   {}'.format(lines, 'lines in the list'))
+    print('{:5}   {}'.format(emptylines, 'empty lines'))
+    print('{:7.1f} {}'.format(avgcharperline, 'average characters per line'))
+    print('{:7.1f} {}'.format(avgcharpernonemptyline, 'average characters per non-empty line'))
+
+stats(a)
 
 #f3
 print()
 print("f3")
-b = '''
-Four score and seven years ago, our fathers brought forth on",
-  "this continent a new nation, conceived in liberty and dedicated",
-  "to the proposition that all men are created equal.  Now we are",
-  "   engaged in a great 		civil war, testing whether that nation, or any",
-  "nation so conceived and so dedicated, can long endure." '''
+
 
 def list_of_words(s: str) -> "list of individual words":
-    '''takes list of stringa and returns a list of individual words'''
-    #fix empty space
-    words = s.split()
+    '''takes list of strings and returns a list of individual words'''
+    table1 = str.maketrans("/.,\!@#?$\"%^&*()-", "                 ")
+    l = s.translate(table1)
+    words = l.split()   
     new = []
     for item in words:
-        item = item.strip()
-        item = item.strip("\"")
-        item = item.strip(".")
-        item = item.strip(",")
-        item = item.strip("\n")
-        item = item.strip("\"")        
+        item = item.strip()      
         new.append(item)
     return new
 
 assert(list_of_words("hello world.")) == ["hello", "world"]       
 print(list_of_words(b))
     
+
+

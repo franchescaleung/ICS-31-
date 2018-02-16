@@ -71,11 +71,9 @@ def handle_commands(diners: list) -> list:
         elif response == 'w':
             g = input("Please enter a word or phrase: ")
             e = collection_search_by_word(diners, g)
+            print(diners)
             for item in e:
-                print(restaurant_str(rest))
-                print("working?")
-            print("hey")
-            
+                print(restaurant_str(item))           
         else:
             invalid_command(response)
 
@@ -178,7 +176,7 @@ def collection_search_by_word(m: list, word: str) -> list:
     woo = []
     for rest in m:
         for i in rest.menu:
-            if i == word:
+            if word in i.name:
                 woo.append(rest)
     return woo
 
